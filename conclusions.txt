@@ -1,0 +1,39 @@
+p3b CONCLUSIONS.TXT
+
+Complete p3b and answer the following questions using results of running
+Java Flight Recorder and Java Mission Control to justify your conclusions..
+
+1) What can you tell about the performance of your hash table implementation compared to Java's tree map? 
+Explain why (or when) your hash table is better or worse than Java's Tree Map. 
+ 
+TreeMap’s total sample count is much lower than HashTable’s counterpart.
+Which shows that hash table is better then Java's Tree Map, because it takes less time and more efficient than TreeMap.
+
+2) What did you observe in java mission control to come to the conclusion above?
+
+According to the screenshot of the "Code_Overview", It can be seen that the execution of the 
+TreeMap class accounts for 88.83% of total sample count, while HashTable only takes 9.35%.
+This means that hash table take less time than Tree Map.
+
+According to the screenshot of the "Code_Hot Methods" It can be seen that the "TreeMap.getEntry" and "TreeMap.put" method take most of the CPU usage,
+while the method of the hash table only take a little.
+This means that hash table take less CPU usage than tree Map
+
+3) SCREENSHOT_001.PNG NOTES: Briefly describe what this image 001 shows
+
+SCREENSHOT_001 is the overview of the codes,there are two part in the 001.PNG, we can see both "Hot Packages" and "Hot Classes", In the "Hot Package", java.util take 88.83%. 
+In the "Hot Classes", java. util.TreeMap takes about 88.83%. 
+Hence, it's easy to conclude that TreeMap class has a higher time complexity compared with HashTable.
+
+
+4) SCREENSHOT_002.PNG NOTES: Briefly describe what this image 002 shows
+
+CREENSHOT_002.PNG is the Code_Hot Methods. In this screenshot, for the stack trace, 
+Java.util.TreeMap.getEntry take about 43.38% of total sample count, and Java.util.TreeMap.put take about 41.04%, 
+which means the treemap is occupying most of the CPU usage of the project.
+This statistics are far larger than HashTable’s insert and get methods, 
+which prove that Treemap hot methods (insert and delete) have higher time complexity.
+
+
+5) Describe other screenshots if you include them in your submission.
+From the screenshot_003, though it shows the memory percentage through the percentage of heap, but there's no comparison useful to us here. 
